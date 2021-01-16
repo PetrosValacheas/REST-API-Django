@@ -1,13 +1,13 @@
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser
-from django.conrib.auth.models import PermissionsMixin
+from django.contrib.auth.models import PermissionsMixin
 from django.contrib.auth.models import BaseUserManager
 
 
 class UserProfileManager(BaseUserManager):
     """ Manager for user profiles"""
 
-    def create_user(self, email , name , password = none ):
+    def create_user(self, email , name , password = 'none' ):
         """Create a new user profile"""
 
         if not email:
@@ -21,7 +21,7 @@ class UserProfileManager(BaseUserManager):
 
         return user
 
-     def create_super_user(self, email , name , password):
+    def create_super_user(self, email , name , password):
         """Create a new super user with given details"""
 
         user = self.create_user(email, name , password)
